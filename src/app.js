@@ -1,9 +1,10 @@
 'use strict';
 
 let http = require('http');
+require('dotenv').config();
 
 const router = require('./lib/router.js');
-const api = require('./api/api.js');
+// const api = require('./api/api.js');
 
 let isRunning = false;
 
@@ -15,7 +16,7 @@ module.exports = {
       app.listen(port, (err) => {
         if (err) {throw err;}
         isRunning = true;
-        console.log('Server up on port', PORT);
+        console.log('Server up on port', port);
       });
     }
     else {
